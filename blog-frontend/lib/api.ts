@@ -1,6 +1,14 @@
 import axios, { AxiosInstance } from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const normalizeApiUrl = (url?: string) => {
+  const fallback = 'http://localhost:5000/api';
+  if (!url || url.trim() === '') return fallback;
+
+  const trimmed = url.trim().replace(/\/+$/, '');
+  return trimmed.endsWith('/api') ? trimmed : `${trimmed}/api`;
+};
+
+const API_URL = normalizeApiUrl(process.env.NEXT_PUBLIC_API_URL);
 
 const api: AxiosInstance = axios.create({
   baseURL: API_URL,
