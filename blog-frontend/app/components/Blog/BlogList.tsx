@@ -390,8 +390,8 @@ export default function BlogList() {
             dataSource={posts.map((post) => ({ ...post, key: post._id }))}
             pagination={{
               current: pagination.current,
-              pageSize: pagination.pageSize,
               total: pagination.total,
+              pageSize: pagination.pageSize,
               onChange: (page) => fetchPosts(page, searchQuery, selectedCategory),
               size: 'default',
               showSizeChanger: false,
