@@ -393,7 +393,6 @@ export default function BlogList() {
               pageSize: pagination.pageSize,
               total: pagination.total,
               onChange: (page) => fetchPosts(page, searchQuery, selectedCategory),
-              pageSize: pagination.pageSize,
               size: 'default',
               showSizeChanger: false,
               showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} posts`,
