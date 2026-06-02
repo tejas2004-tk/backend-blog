@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "installCommand": "npm install && cd blog-frontend && npm install",
+  "buildCommand": "cd blog-frontend && npm run build",
+  "outputDirectory": "blog-frontend/.next"
+}
