@@ -67,7 +67,8 @@ export default function LayoutComponent({ children }: { children: React.ReactNod
             background: '#ffffff',
             borderRight: '1px solid #e5e7eb',
           }}
-          triggerCollapsible
+          collapsible
+          collapsed={false}
         >
           <Menu
             mode="inline"

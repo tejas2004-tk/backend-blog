@@ -159,7 +159,7 @@ export default function BlogList() {
       title: 'Actions',
       key: 'actions',
       width: 120,
-      render: (_, record: BlogPost) => (
+      render: (_: any, record: BlogPost) => (
         <Space size="small">
           <Link href={`/view/${record._id}`}>
             <Button 
