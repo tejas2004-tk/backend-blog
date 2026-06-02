@@ -397,7 +397,6 @@ export default function BlogList() {
               showSizeChanger: false,
               showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} posts`,
             }}
-            responsive
             bordered={false}
             style={{ borderRadius: '12px' }}
           />
