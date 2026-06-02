@@ -39,6 +39,7 @@ export default function BlogForm({ isEdit = false }: BlogFormProps) {
       status: 'draft',
     },
   });
+  const imagePreview = watch('image')?.trim() ?? '';
 
   useEffect(() => {
     if (isEdit && postId) {
@@ -253,13 +254,13 @@ export default function BlogForm({ isEdit = false }: BlogFormProps) {
             </Col>
           </Row>
 
-          {watch('image') && watch('image').trim() !== '' && (
+          {imagePreview !== '' && (
             <div style={{ marginBottom: '24px' }}>
               <div style={{ fontSize: '12px', fontWeight: '600', color: '#6b7280', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 Image Preview
               </div>
               <img
-                src={watch('image')}
+                src={imagePreview}
                 alt="Preview"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = 'none';
