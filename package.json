@@ -1,0 +1,32 @@
+{
+  "name": "blog-management-system",
+  "version": "1.0.0",
+  "description": "Full-stack Blog Post Management System",
+  "scripts": {
+    "setup": "npm install && npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd blog-backend && npm install && cp -n .env.example .env || true",
+    "setup:frontend": "cd blog-frontend && npm install && cp -n .env.example .env.local || true",
+    "dev:backend": "cd blog-backend && npm run dev",
+    "dev:frontend": "cd blog-frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:backend": "echo 'Backend is ready to deploy'",
+    "build:frontend": "cd blog-frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:backend": "cd blog-backend && npm start",
+    "start:frontend": "cd blog-frontend && npm start"
+  },
+  "keywords": [
+    "blog",
+    "management",
+    "crud",
+    "full-stack",
+    "next.js",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "info": {
+    "name": "Blog Management API",
+    "description": "Collection of API endpoints for Blog Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/posts?page=1&limit=10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Single Post",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/posts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Getting Started with React\",\n  \"content\": \"React is a JavaScript library for building user interfaces. It makes creating interactive UIs painless by allowing you to design simple views for each state in your application.\",\n  \"author\": \"John Doe\",\n  \"category\": \"Technology\",\n  \"tags\": [\"react\", \"javascript\", \"frontend\"],\n  \"image\": \"https://via.placeholder.com/800x400\",\n  \"status\": \"published\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Post",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/posts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", ":id"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated Title\",\n  \"content\": \"Updated content...\",\n  \"author\": \"Jane Doe\",\n  \"category\": \"Business\",\n  \"status\": \"draft\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Post",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:5000/api/posts/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", ":id"]
+            }
+          }
+        },
+        {
+          "name": "Search Posts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/posts/search?query=react&category=Technology&page=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "search"],
+              "query": [
+                { "key": "query", "value": "react" },
+                { "key": "category", "value": "Technology" },
+                { "key": "page", "value": "1" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Export to CSV",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:5000/api/posts/export/csv?query=&category=Technology",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "posts", "export", "csv"],
+              "query": [
+                { "key": "query", "value": "" },
+                { "key": "category", "value": "Technology" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
