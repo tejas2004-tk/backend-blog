@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "installCommand": "npm install && cd blog-frontend && npm install",
-  "buildCommand": "cd blog-frontend && npm run build",
-  "outputDirectory": "blog-frontend/.next"
+  "installCommand": "if [ -d blog-frontend ]; then npm install && cd blog-frontend && npm install; else npm install; fi",
+  "buildCommand": "if [ -d blog-frontend ]; then cd blog-frontend && npm run build; else npm run build; fi",
+  "outputDirectory": ".next"
 }
