@@ -8,8 +8,10 @@ const configuredOrigins = (process.env.CORS_ORIGINS || '')
   .filter(Boolean);
 
 const allowedOrigins = [...new Set([...localOrigins, ...configuredOrigins])];
+const allowAllOrigins = configuredOrigins.includes('*');
 
 const isAllowedOrigin = (origin) => {
+  if (allowAllOrigins) return true;
   if (!origin) return true;
   if (allowedOrigins.includes(origin)) return true;
 
